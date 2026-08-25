@@ -386,10 +386,10 @@ function chrome(doc: Doc, report: ServiceReport): void {
 
     doc
       .font("Helvetica")
-      .fontSize(7.5)
+      .fontSize(6.5)
       .fillColor(MUTED)
       .text(
-        "Capture event logs before resetting anything. Follow the site's own isolation and permit to work procedure.",
+        "All Rights Reserved. Copyright (c) 2026 Gopi Sri Krishna Yarlagadda (gopisrikrishna.y@gmail.com). Follow isolation & permit to work procedures.",
         PAGE.margin,
         bottom,
         { width: W * 0.8, lineBreak: false },
@@ -418,7 +418,7 @@ export async function renderServiceReportPdf(
     bufferPages: true,
     info: {
       Title: `Site ${report.site ?? report.nodeId} field service pack`,
-      Author: "Technical asset management",
+      Author: "Gopi Sri Krishna Yarlagadda (gopisrikrishna.y@gmail.com) - All Rights Reserved",
       Subject: plainText(report.headline),
     },
   });

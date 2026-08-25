@@ -1,0 +1,13 @@
+Copyright (c) 2026 Gopi Sri Krishna Yarlagadda (gopisrikrishna.y@gmail.com). All Rights Reserved.
+
+This software and all associated documentation files (the "Software") are proprietary and confidential.
+
+No part of this Software may be copied, modified, adapted, translated, distributed, published, sublicensed, or used in any manner, whether for commercial or non-commercial purposes, without the prior written consent of the copyright holder, Gopi Sri Krishna Yarlagadda.
+
+THIRD-PARTY DATA & SOFTWARE ATTRIBUTION:
+
+1. Telemetry Data:
+This Software retrieves public solar energy telemetry and station metadata from the SolarNetwork platform (https://solarnetwork.net). The data remains the property of SolarNetwork and/or the respective node operators, and is used in accordance with their public query protocols. Gopi Sri Krishna Yarlagadda claims no ownership over the raw public telemetry data itself.
+
+2. Software Libraries:
+This Software utilizes third-party open-source libraries including the Model Context Protocol SDK, PDFKit, Zod, and mysql2 under the terms of the MIT License. The original copyright notices and permissions of these libraries are preserved in their respective dependency folders.
