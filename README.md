@@ -1,4 +1,4 @@
-# heliograph
+# solarnetwork-mcp
 
 An [MCP](https://modelcontextprotocol.io) server that turns SolarNetwork solar
 telemetry into tools an AI agent can call.
@@ -80,11 +80,11 @@ It installs the server, wires itself up, proves the install works, and then runs
 a guided demo of every capability against live public solar sites.
 
 ```text
-Set up and demo the heliograph MCP server for me.
+Set up and demo the solarnetwork MCP server for me.
 
 1. INSTALL
-   git clone https://github.com/gopisrikrishna/heliograph-mcp.git
-   cd heliograph-mcp
+   git clone https://github.com/gopisrikrishna/solarnetwork-mcp.git
+   cd solarnetwork-mcp
    npm install
    npm run build
 
@@ -96,7 +96,7 @@ Set up and demo the heliograph MCP server for me.
 3. CONNECT IT
    Register the server with yourself over stdio:
      command: node
-     args:    ./dist/index.js   (run from the heliograph-mcp directory)
+     args:    ./dist/index.js   (run from the solarnetwork-mcp directory)
    The repo ships a .mcp.json that already does this. Restart/reconnect if your
    client needs it, then confirm you can see 10 tools and list their names.
 
@@ -190,9 +190,9 @@ started in this directory picks it up automatically. Just edit the path:
 ```json
 {
   "mcpServers": {
-    "heliograph": {
+    "solarnetwork": {
       "command": "node",
-      "args": ["/absolute/path/to/heliograph-mcp/dist/index.js"]
+      "args": ["/absolute/path/to/solarnetwork-mcp/dist/index.js"]
     }
   }
 }
@@ -201,7 +201,7 @@ started in this directory picks it up automatically. Just edit the path:
 Or register it globally from anywhere:
 
 ```bash
-claude mcp add solarnetwork -- node /absolute/path/to/heliograph-mcp/dist/index.js
+claude mcp add solarnetwork -- node /absolute/path/to/solarnetwork-mcp/dist/index.js
 ```
 
 ### Claude Desktop
@@ -214,9 +214,9 @@ Edit `claude_desktop_config.json`:
 ```json
 {
   "mcpServers": {
-    "heliograph": {
+    "solarnetwork": {
       "command": "node",
-      "args": ["/absolute/path/to/heliograph-mcp/dist/index.js"]
+      "args": ["/absolute/path/to/solarnetwork-mcp/dist/index.js"]
     }
   }
 }
@@ -240,10 +240,10 @@ Same `mcpServers` block as above.
 ```json
 {
   "servers": {
-    "heliograph": {
+    "solarnetwork": {
       "type": "stdio",
       "command": "node",
-      "args": ["/absolute/path/to/heliograph-mcp/dist/index.js"]
+      "args": ["/absolute/path/to/solarnetwork-mcp/dist/index.js"]
     }
   }
 }
@@ -256,7 +256,7 @@ In `settings.json`, under `context_servers`:
 ```json
 {
   "context_servers": {
-    "heliograph": {
+    "solarnetwork": {
       "command": { "path": "node", "args": ["/absolute/path/to/dist/index.js"] }
     }
   }
@@ -268,7 +268,7 @@ In `settings.json`, under `context_servers`:
 Any MCP client can launch it over stdio:
 
 ```bash
-node /absolute/path/to/heliograph-mcp/dist/index.js
+node /absolute/path/to/solarnetwork-mcp/dist/index.js
 ```
 
 To drive it from code, [`scripts/smoke.mjs`](scripts/smoke.mjs) is a complete

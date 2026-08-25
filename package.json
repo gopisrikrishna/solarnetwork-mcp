@@ -1,10 +1,10 @@
 {
-  "name": "heliograph-mcp",
+  "name": "solarnetwork-mcp",
   "version": "0.3.0",
   "description": "MCP server for solar asset management: reads SolarNetwork telemetry, finds dated equipment faults, and writes field-ready service reports as PDFs.",
   "type": "module",
   "bin": {
-    "heliograph-mcp": "dist/index.js"
+    "solarnetwork-mcp": "dist/index.js"
   },
   "scripts": {
     "build": "tsc",
@@ -43,6 +43,6 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gopisrikrishna/heliograph-mcp.git"
+    "url": "git+https://github.com/gopisrikrishna/solarnetwork-mcp.git"
   }
 }
