@@ -484,5 +484,9 @@ export function renderMarkdown(r: ServiceReport): string {
   for (const n of r.dataNotes) L.push(`- ${n}`);
   L.push("");
 
+  L.push("---");
+  L.push("All Rights Reserved. Copyright (c) 2026 Gopi Sri Krishna Yarlagadda (gopisrikrishna.y@gmail.com).");
+  L.push("");
+
   return plainText(L.join("\n"));
 }
