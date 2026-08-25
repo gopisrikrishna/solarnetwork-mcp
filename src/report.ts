@@ -65,6 +65,7 @@ const SAFETY = [
   "The DC side stays live whenever there is daylight, even with the AC switched off. Do not open or break DC connectors under load.",
   "Export event logs before you reset or power-cycle anything. Several of these jobs depend on log history that cannot be recovered once cleared.",
   "If you find damage, heat marks, water ingress, or anything you are not comfortable with, stop and call before going further.",
+  "DISCLAIMER: This report is generated automatically. Gopi Sri Krishna Yarlagadda is not liable for any errors, hardware damage, or injuries resulting from work performed under this service pack.",
 ];
 
 /**
