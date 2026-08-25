@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "solarnetwork": {
+      "command": "node",
+      "args": ["./dist/index.js"]
+    }
+  }
+}

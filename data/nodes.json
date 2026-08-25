@@ -1,0 +1,692 @@
+{
+  "scannedRanges": [
+    "1-800",
+    "880-1000",
+    "1001-5000"
+  ],
+  "scannedAt": "2026-08-24",
+  "totalWithData": 102,
+  "liveCount": 52,
+  "note": "Public SolarNetwork nodes reachable anonymously via /pub. `live` means data seen on or after 2026-08-01.",
+  "nodes": [
+    {
+      "nodeId": 11,
+      "timeZone": "Pacific/Auckland",
+      "lastSeen": "2026-08-24",
+      "firstSeen": "2009-12-02",
+      "days": 6110
+    },
+    {
+      "nodeId": 103,
+      "timeZone": "Pacific/Auckland",
+      "lastSeen": "2014-08-04",
+      "firstSeen": "2013-03-07",
+      "days": 515
+    },
+    {
+      "nodeId": 121,
+      "timeZone": "Pacific/Auckland",
+      "lastSeen": "2014-03-05",
+      "firstSeen": "2014-03-05",
+      "days": 1
+    },
+    {
+      "nodeId": 127,
+      "timeZone": "Pacific/Auckland",
+      "lastSeen": "2014-08-01",
+      "firstSeen": "2014-06-25",
+      "days": 37
+    },
+    {
+      "nodeId": 151,
+      "timeZone": "Pacific/Auckland",
+      "lastSeen": "2026-08-05",
+      "firstSeen": "2014-12-19",
+      "days": 4248
+    },
+    {
+      "nodeId": 185,
+      "timeZone": "Pacific/Auckland",
+      "lastSeen": "2016-12-13",
+      "firstSeen": "2015-08-03",
+      "days": 498
+    },
+    {
+      "nodeId": 186,
+      "timeZone": "Pacific/Auckland",
+      "lastSeen": "2015-08-14",
+      "firstSeen": "2015-08-10",
+      "days": 4
+    },
+    {
+      "nodeId": 188,
+      "timeZone": "Pacific/Auckland",
+      "lastSeen": "2021-02-24",
+      "firstSeen": "2015-08-20",
+      "days": 2015
+    },
+    {
+      "nodeId": 191,
+      "timeZone": "Pacific/Auckland",
+      "lastSeen": "2026-08-24",
+      "firstSeen": "2015-09-08",
+      "days": 4004
+    },
+    {
+      "nodeId": 198,
+      "timeZone": "Pacific/Auckland",
+      "lastSeen": "2016-02-15",
+      "firstSeen": "2015-10-22",
+      "days": 117
+    },
+    {
+      "nodeId": 204,
+      "timeZone": "Pacific/Auckland",
+      "lastSeen": "2016-08-07",
+      "firstSeen": "2016-02-02",
+      "days": 188
+    },
+    {
+      "nodeId": 212,
+      "timeZone": "Pacific/Auckland",
+      "lastSeen": "2017-06-23",
+      "firstSeen": "2016-02-17",
+      "days": 493
+    },
+    {
+      "nodeId": 216,
+      "timeZone": "Pacific/Auckland",
+      "lastSeen": "2019-09-25",
+      "firstSeen": "2015-12-21",
+      "days": 1374
+    },
+    {
+      "nodeId": 220,
+      "timeZone": "Pacific/Auckland",
+      "lastSeen": "2023-06-20",
+      "firstSeen": "2016-02-05",
+      "days": 2692
+    },
+    {
+      "nodeId": 241,
+      "timeZone": "Pacific/Auckland",
+      "lastSeen": "2017-05-19",
+      "firstSeen": "2016-08-08",
+      "days": 285
+    },
+    {
+      "nodeId": 242,
+      "timeZone": "Pacific/Auckland",
+      "lastSeen": "2016-10-28",
+      "firstSeen": "2016-08-08",
+      "days": 82
+    },
+    {
+      "nodeId": 271,
+      "timeZone": "Pacific/Auckland",
+      "lastSeen": "2017-03-01",
+      "firstSeen": "2017-02-26",
+      "days": 3
+    },
+    {
+      "nodeId": 275,
+      "timeZone": "Pacific/Auckland",
+      "lastSeen": "2020-03-20",
+      "firstSeen": "2017-05-09",
+      "days": 1046
+    },
+    {
+      "nodeId": 317,
+      "timeZone": "Pacific/Auckland",
+      "lastSeen": "2017-12-16",
+      "firstSeen": "2017-12-12",
+      "days": 4
+    },
+    {
+      "nodeId": 337,
+      "timeZone": "Australia/Perth",
+      "lastSeen": "2018-07-02",
+      "firstSeen": "2018-03-19",
+      "days": 106
+    },
+    {
+      "nodeId": 344,
+      "timeZone": "Pacific/Auckland",
+      "lastSeen": "2024-07-09",
+      "firstSeen": "2018-08-13",
+      "days": 2157
+    },
+    {
+      "nodeId": 354,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "firstSeen": "2016-05-03",
+      "days": 3765
+    },
+    {
+      "nodeId": 355,
+      "timeZone": "America/New_York",
+      "lastSeen": "2023-01-03",
+      "firstSeen": "2012-12-31",
+      "days": 3655
+    },
+    {
+      "nodeId": 361,
+      "timeZone": "America/New_York",
+      "lastSeen": "2023-01-09",
+      "firstSeen": "2012-12-31",
+      "days": 3661
+    },
+    {
+      "nodeId": 362,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-04-23",
+      "firstSeen": "2012-12-31",
+      "days": 4862
+    },
+    {
+      "nodeId": 365,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-01-22",
+      "firstSeen": "2012-12-31",
+      "days": 4770
+    },
+    {
+      "nodeId": 366,
+      "timeZone": "America/New_York",
+      "lastSeen": "2025-08-08",
+      "firstSeen": "2013-01-15",
+      "days": 4589
+    },
+    {
+      "nodeId": 367,
+      "timeZone": "America/New_York",
+      "lastSeen": "2025-08-08",
+      "firstSeen": "2013-01-01",
+      "days": 4603
+    },
+    {
+      "nodeId": 369,
+      "timeZone": "America/New_York",
+      "lastSeen": "2025-05-31",
+      "firstSeen": "2013-01-18",
+      "days": 4516
+    },
+    {
+      "nodeId": 371,
+      "timeZone": "America/New_York",
+      "lastSeen": "2021-01-06",
+      "firstSeen": "2019-05-09",
+      "days": 608
+    },
+    {
+      "nodeId": 373,
+      "timeZone": "America/New_York",
+      "lastSeen": "2025-08-08",
+      "firstSeen": "2013-01-21",
+      "days": 4583
+    },
+    {
+      "nodeId": 375,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "firstSeen": "2018-12-11",
+      "days": 2813
+    },
+    {
+      "nodeId": 376,
+      "timeZone": "America/Puerto_Rico",
+      "lastSeen": "2026-07-31",
+      "firstSeen": "2019-01-04",
+      "days": 2765
+    },
+    {
+      "nodeId": 391,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "firstSeen": "2012-12-31",
+      "days": 4984
+    },
+    {
+      "nodeId": 392,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "firstSeen": "2011-12-31",
+      "days": 5350
+    },
+    {
+      "nodeId": 397,
+      "timeZone": "Pacific/Auckland",
+      "lastSeen": "2020-07-01",
+      "firstSeen": "2018-10-29",
+      "days": 611
+    },
+    {
+      "nodeId": 398,
+      "timeZone": "Pacific/Auckland",
+      "lastSeen": "2024-12-28",
+      "firstSeen": "2018-10-30",
+      "days": 2252
+    },
+    {
+      "nodeId": 424,
+      "timeZone": "Asia/Kolkata",
+      "lastSeen": "2019-10-30",
+      "firstSeen": "2019-10-02",
+      "days": 28
+    },
+    {
+      "nodeId": 425,
+      "timeZone": "Asia/Kolkata",
+      "lastSeen": "2019-10-29",
+      "firstSeen": "2019-10-05",
+      "days": 24
+    },
+    {
+      "nodeId": 426,
+      "timeZone": "Pacific/Auckland",
+      "lastSeen": "2023-12-01",
+      "firstSeen": "2019-10-10",
+      "days": 1514
+    },
+    {
+      "nodeId": 427,
+      "timeZone": "America/Puerto_Rico",
+      "lastSeen": "2025-03-31",
+      "firstSeen": "2019-10-15",
+      "days": 1994
+    },
+    {
+      "nodeId": 429,
+      "timeZone": "America/Puerto_Rico",
+      "lastSeen": "2019-10-18",
+      "firstSeen": "2019-10-18",
+      "days": 1
+    },
+    {
+      "nodeId": 432,
+      "timeZone": "Pacific/Auckland",
+      "lastSeen": "2019-10-30",
+      "firstSeen": "2019-10-25",
+      "days": 5
+    },
+    {
+      "nodeId": 433,
+      "timeZone": "Pacific/Auckland",
+      "lastSeen": "2026-08-24",
+      "firstSeen": "2020-10-24",
+      "days": 2131
+    },
+    {
+      "nodeId": 436,
+      "timeZone": "America/Puerto_Rico",
+      "lastSeen": "2020-02-24",
+      "firstSeen": "2020-02-18",
+      "days": 7
+    },
+    {
+      "nodeId": 451,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "firstSeen": "2020-05-12",
+      "days": 2295
+    },
+    {
+      "nodeId": 452,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "firstSeen": "2020-05-11",
+      "days": 2296
+    },
+    {
+      "nodeId": 453,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "firstSeen": "2020-05-11",
+      "days": 2296
+    },
+    {
+      "nodeId": 456,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "firstSeen": "2020-05-21",
+      "days": 2286
+    },
+    {
+      "nodeId": 457,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-07-30",
+      "firstSeen": "2020-06-08",
+      "days": 2243
+    },
+    {
+      "nodeId": 458,
+      "timeZone": "Europe/Bucharest",
+      "lastSeen": "2020-05-15",
+      "firstSeen": "2020-05-14",
+      "days": 2
+    },
+    {
+      "nodeId": 463,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "firstSeen": "2020-06-24",
+      "days": 2252
+    },
+    {
+      "nodeId": 464,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "firstSeen": "2020-07-10",
+      "days": 2236
+    },
+    {
+      "nodeId": 465,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "firstSeen": "2020-07-11",
+      "days": 2235
+    },
+    {
+      "nodeId": 467,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "firstSeen": "2020-07-11",
+      "days": 2235
+    },
+    {
+      "nodeId": 475,
+      "timeZone": "Pacific/Auckland",
+      "lastSeen": "2025-06-21",
+      "firstSeen": "2020-09-08",
+      "days": 1747
+    },
+    {
+      "nodeId": 479,
+      "timeZone": "America/Puerto_Rico",
+      "lastSeen": "2022-11-23",
+      "firstSeen": "2020-09-22",
+      "days": 792
+    },
+    {
+      "nodeId": 481,
+      "timeZone": "America/New_York",
+      "lastSeen": "2023-05-24",
+      "firstSeen": "2021-01-12",
+      "days": 863
+    },
+    {
+      "nodeId": 483,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "firstSeen": "2021-06-11",
+      "days": 1900
+    },
+    {
+      "nodeId": 496,
+      "timeZone": "America/New_York",
+      "lastSeen": "2021-11-04",
+      "firstSeen": "2021-04-20",
+      "days": 199
+    },
+    {
+      "nodeId": 498,
+      "timeZone": "America/Denver",
+      "lastSeen": "2026-08-24",
+      "firstSeen": "2021-11-02",
+      "days": 1756
+    },
+    {
+      "nodeId": 690,
+      "timeZone": "Pacific/Auckland",
+      "lastSeen": "2026-08-24",
+      "firstSeen": "2023-12-06",
+      "days": 993
+    },
+    {
+      "nodeId": 780,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "firstSeen": "2019-12-31",
+      "days": 2428
+    },
+    {
+      "nodeId": 781,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "firstSeen": "2019-12-31",
+      "days": 2428
+    },
+    {
+      "nodeId": 880,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "days": 2428
+    },
+    {
+      "nodeId": 881,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "days": 2428
+    },
+    {
+      "nodeId": 882,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "days": 2428
+    },
+    {
+      "nodeId": 883,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "days": 2428
+    },
+    {
+      "nodeId": 884,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "days": 2428
+    },
+    {
+      "nodeId": 885,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "days": 2428
+    },
+    {
+      "nodeId": 887,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "days": 2428
+    },
+    {
+      "nodeId": 888,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "days": 2428
+    },
+    {
+      "nodeId": 889,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "days": 2428
+    },
+    {
+      "nodeId": 890,
+      "timeZone": "America/Detroit",
+      "lastSeen": "2026-08-24",
+      "days": 2428
+    },
+    {
+      "nodeId": 891,
+      "timeZone": "America/Detroit",
+      "lastSeen": "2026-08-24",
+      "days": 2428
+    },
+    {
+      "nodeId": 892,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "days": 2428
+    },
+    {
+      "nodeId": 893,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "days": 2428
+    },
+    {
+      "nodeId": 894,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "days": 2428
+    },
+    {
+      "nodeId": 895,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "days": 2428
+    },
+    {
+      "nodeId": 896,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "days": 2428
+    },
+    {
+      "nodeId": 897,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "days": 2428
+    },
+    {
+      "nodeId": 898,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "days": 2428
+    },
+    {
+      "nodeId": 899,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "days": 2428
+    },
+    {
+      "nodeId": 900,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "days": 2428
+    },
+    {
+      "nodeId": 902,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "days": 2428
+    },
+    {
+      "nodeId": 904,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "days": 542
+    },
+    {
+      "nodeId": 928,
+      "timeZone": "America/New_York",
+      "lastSeen": "2025-04-18",
+      "days": 5
+    },
+    {
+      "nodeId": 940,
+      "timeZone": "America/New_York",
+      "lastSeen": "2023-01-16",
+      "days": 1112
+    },
+    {
+      "nodeId": 941,
+      "timeZone": "America/Chicago",
+      "lastSeen": "2024-09-30",
+      "days": 335
+    },
+    {
+      "nodeId": 942,
+      "timeZone": "America/New_York",
+      "lastSeen": "2024-09-30",
+      "days": 580
+    },
+    {
+      "nodeId": 943,
+      "timeZone": "America/Chicago",
+      "lastSeen": "2024-09-30",
+      "days": 335
+    },
+    {
+      "nodeId": 945,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "days": 2428
+    },
+    {
+      "nodeId": 949,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "days": 601
+    },
+    {
+      "nodeId": 953,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "days": 2428
+    },
+    {
+      "nodeId": 964,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "days": 2428
+    },
+    {
+      "nodeId": 976,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "days": 2428
+    },
+    {
+      "nodeId": 987,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "days": 2428
+    },
+    {
+      "nodeId": 989,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "days": 481
+    },
+    {
+      "nodeId": 1000,
+      "timeZone": "America/New_York",
+      "lastSeen": "2026-08-24",
+      "days": 2428
+    },
+    {
+      "nodeId": 1036,
+      "timeZone": "America/Los_Angeles",
+      "lastSeen": "2026-08-24",
+      "firstSeen": "2025-11-13",
+      "days": 284
+    },
+    {
+      "nodeId": 1041,
+      "timeZone": "Pacific/Auckland",
+      "lastSeen": "2025-10-21",
+      "firstSeen": "2025-10-13",
+      "days": 8
+    },
+    {
+      "nodeId": 1072,
+      "timeZone": "America/Los_Angeles",
+      "lastSeen": "2026-06-17",
+      "firstSeen": "2026-04-15",
+      "days": 63
+    }
+  ]
+}

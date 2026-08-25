@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.env
+*.log
+
+# Large working datasets pulled from the API, regenerable via scripts
+*.csv
+holdout_nodes.json
+
+# Generated reports and field packs
+working/
+*.pdf
