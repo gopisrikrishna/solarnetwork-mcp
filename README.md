@@ -405,4 +405,4 @@ More detail: [USAGE.md](USAGE.md) for worked examples and an effort comparison,
 
 ## License
 
-MIT
+Proprietary / All Rights Reserved. See [LICENSE](LICENSE) for details.
