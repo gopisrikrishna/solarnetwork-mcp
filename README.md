@@ -4,8 +4,14 @@ An [MCP](https://modelcontextprotocol.io) server that turns SolarNetwork solar
 telemetry into tools an AI agent can call.
 
 **No credentials required.** It runs against SolarNetwork's public endpoints,
-where ~52 live solar sites publish real generation, irradiance and weather data
-— several of them updating to the minute, with six years of history.
+where **567 nodes publish data**. That is from a re-check of node IDs 1 to 5000 on
+2026-10-15; the first full sweep of IDs 1 to 12000 on 2026-08-25 found 556 (see
+[NODES.md](NODES.md)). Of the 567, 336 have generation, inverter or irradiance streams
+this server can classify, 288 of those reported in the last 24 hours, and 205 have two
+or more inverters, which is what fault detection needs. Several update to the minute, and
+the core US fleet (nodes 880 to 1000) has nearly seven years of history.
+
+**Verified 2026-10-15:** `npm run verify` passes 28 of 28 checks against live data.
 
 ## What it can do
 
@@ -169,6 +175,8 @@ A failure means the server regressed, or SolarNetwork restated history. Each
 assertion prints what it expected against what it got, so the two are easy to
 tell apart.
 
+Last run on 2026-10-15: **28 passed, 0 failed.**
+
 ## Load it into your agent
 
 Every client wants the same three facts: run `node`, pass it `dist/index.js`,
@@ -282,6 +290,8 @@ client not being restarted.
 
 ## The tools
 
+![The ten tools, grouped by job](docs/img/tool-map.png)
+
 **Discovery**
 
 | Tool | Answers |
@@ -361,6 +371,42 @@ and an earlier version of this tool said so. It isn't dead: its meter accumulate
 A health check keyed on `watts` alone would page someone about a working
 inverter every night.
 
+### A full review of one site
+
+Real output from `asset_review` and `create_service_report` on node 1000, for
+2026-01-01 to 2026-09-01 (run on 2026-10-15):
+
+```
+10 event(s) across 243 buckets, 6 still open at 2026-09-01.
+Estimated 3716 kWh not delivered.
+```
+
+The report headline reads "8 job(s), 6 still open. Estimated 3,716.3 kWh not
+delivered, about 11.5% of what the site should have made."
+
+| Finding | Device | What the review says |
+| --- | --- | --- |
+| Outage | INV/1 | Produced nothing from 2026-05-17 to 2026-08-03 (79 days) while a sibling kept producing |
+| Outage | INV/1 | Already down when the window opened, back on 2026-01-13 (at least 13 days) |
+| Outage | INV/2, INV/3 | Both produced nothing from 2026-02-11 to 2026-02-15 (5 days) |
+| Power telemetry loss | INV/4 | 0 W on every bucket since 2026-03-25 (160 days) while its energy meter advanced 7887 kWh |
+| Meter counter reset | GEN/100, INV/1 | Counter went backwards on 2026-03-15 (-2,358 kWh and -37 kWh) |
+| Registered, no data | GEN/101, 102, 103 | Declared in the source registry, never returned a bucket |
+
+![Node 1000 fault timeline, January to August 2026](docs/img/fault-timeline.png)
+
+The chart is built from the same public daily data the server reads. The red block
+is Inverter 1's 79 missing days. The amber block is Inverter 4: its power reads 0 W,
+but its energy field is non-zero on every one of those days, so it is alive and only
+the power reading is lost.
+
+The PDF is a printable field pack, 17 pages for this site. Page 1 is the summary and
+safety notice, and each job gets its own page with steps, tools and sign-off criteria:
+
+![Field service pack, page 1](docs/img/report-page-1.png)
+
+![Field service pack, a single job page with tick boxes](docs/img/report-page-3.png)
+
 ## Your own nodes
 
 Set two environment variables and the server switches from the public `/pub`
@@ -376,11 +422,16 @@ to verify against.
 
 ## How it works
 
-Three files, ~900 lines total:
+![Architecture: agent, MCP server and SolarNetwork public API](docs/img/architecture.png)
 
-- [`src/solarnetwork.ts`](src/solarnetwork.ts) — API client, paging, request signing
-- [`src/analysis.ts`](src/analysis.ts) — source-ID parsing, per-site diagnosis
-- [`src/index.ts`](src/index.ts) — the ten tool definitions
+Six TypeScript files, about 3,200 lines:
+
+- [`src/solarnetwork.ts`](src/solarnetwork.ts) (337 lines): API client, paging, request signing
+- [`src/analysis.ts`](src/analysis.ts) (371 lines): source-ID parsing, per-site diagnosis
+- [`src/assets.ts`](src/assets.ts) (708 lines): the asset-review layer, which walks each device's day-by-day record and returns dated fault events
+- [`src/report.ts`](src/report.ts) (493 lines): turns a review into prioritised work orders, and renders Markdown
+- [`src/pdf.ts`](src/pdf.ts) (571 lines): renders the printable PDF field pack
+- [`src/index.ts`](src/index.ts) (710 lines): the ten tool definitions
 
 The tool *descriptions* are the real interface. An agent only chains
 `list_sources` → `query_datum` correctly if the descriptions say when to reach
@@ -393,9 +444,14 @@ than any of the data handling.
   therefore no capacity-normalised comparison. `compare_fleet` ranks raw output
   and says so — a big site will outrank a small healthy one.
 - `list_public_nodes` reads a point-in-time scan ([`data/nodes.json`](data/nodes.json)),
-  not a live listing. Call `list_sources` to confirm before relying on a node.
+  not a live listing. That file is the 2026-08-25 sweep of node IDs 1 to 12000, which found
+  556 nodes with data ([NODES.md](NODES.md) has the method and the breakdown). A re-check on
+  2026-10-15 found 567; the list, with stream counts, is in
+  [`data/rescan-2026-10-15.json`](data/rescan-2026-10-15.json). Call `list_sources` to confirm
+  before relying on a node.
 - No caching. Repeated agent calls re-hit the API.
-- No unit tests. `scripts/smoke.mjs` is a live probe, not a test suite.
+- No offline unit tests. `scripts/verify.mjs` runs 28 assertions against live public data, so a failure
+  means either a regression or SolarNetwork restating history. `scripts/smoke.mjs` is a live probe.
 - SolarQuery silently coerces fine-grained aggregation to hourly for ranges over
   ~7 days. `query_datum` passes your aggregation through as-is, so long ranges
   return coarser data than requested.
@@ -406,3 +462,31 @@ More detail: [USAGE.md](USAGE.md) for worked examples and an effort comparison,
 ## License
 
 Proprietary / All Rights Reserved. See [LICENSE](LICENSE) for details.
+
+## Disclaimer
+
+- **No warranty.** The software and everything it produces (analysis, fault events, loss estimates, work orders,
+  and PDF, Markdown or JSON reports) are provided "as is", without warranty of any kind, express or implied,
+  including accuracy, completeness and fitness for a particular purpose.
+- **Estimates, not engineering advice.** Fault detection is statistical and peer-relative. Loss figures are
+  peer-scaled estimates, not warranty or contractual calculations. "No faults found" and "not assessed" are not
+  statements that equipment is healthy or safe, and detection runs on daily buckets, so shorter events are invisible.
+- **Safety.** A generated field service pack describes what to look at. It does not replace the site's own
+  isolation, permit-to-work or PPE procedures, and it must only be acted on by qualified people. The DC side of
+  solar equipment stays live in daylight.
+- **Third-party data.** Data comes from SolarNetwork's public API and can be incomplete, delayed, restated or
+  removed. Node counts in this repository are snapshots and may be wrong. This project is not affiliated with,
+  endorsed by or sponsored by SolarNetwork or its operators.
+- **Personal project.** This is a personal project. It is not a product, work or statement of my employer, and it
+  is not affiliated with my employer.
+- **Limitation of liability.** To the maximum extent permitted by law, the author is not liable for any claim,
+  damages or other liability, including lost energy output or revenue, equipment damage or personal injury,
+  arising from the use of, or inability to use, this software or its output.
+
+## Credit and contact
+
+Written by **Gopi Sri Krishna Yarlagadda**. Copyright (c) 2026 Gopi Sri Krishna Yarlagadda. All rights reserved.
+
+Linking to this project and describing it are welcome, and so is credit: "Gopi Sri Krishna Yarlagadda,
+solarnetwork-mcp, https://github.com/gopisrikrishna/solarnetwork-mcp". Using, adapting or redistributing any part of
+the code or its output needs written permission first: gopisrikrishna.y@gmail.com.
