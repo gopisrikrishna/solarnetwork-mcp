@@ -3,7 +3,42 @@
 Findings from scanning node IDs 1–5000 against SolarNetwork's public `/pub`
 endpoints and walking the SolarQuery / SolarUser API docs, on 2026-08-24.
 
-## 1. Public nodes found
+## Update, 2026-10-15: corrected node counts
+
+The node counts in section 1 below came from a first scan that read HTTP 403 (permission
+denied) and 429 (rate limited) responses as "no such node". That undercounted by roughly 4x.
+A full sweep of IDs 1 to 12000 on 2026-08-25 classified every outcome properly and found
+**556 public nodes with data**, 197 public nodes that never reported, and 11,246 private
+nodes (403). The method and the breakdown are in [NODES.md](NODES.md).
+
+On 2026-10-15 the public IDs were probed again with
+`GET /solarquery/api/v1/pub/range/interval?nodeId=N`. A node counts as having data if the
+response is successful and contains a date range. Its streams were then listed with
+`/pub/range/sources` and classified by the `/{site}/{sub}/{array}/{KIND}/{index}` convention.
+The full list is in [`data/rescan-2026-10-15.json`](data/rescan-2026-10-15.json).
+
+| | Nodes |
+|---|---|
+| Public nodes with data | **567** |
+| Reported in the last 24 hours | 325 |
+| Reported in the last 30 days | 329 |
+| With `GEN`, `INV` or `PYR` streams (solar by this server's convention) | 336 |
+| ...of those, reported in the last 24 hours | 288 |
+| With two or more inverters (can be fault-reviewed) | 205 (195 reported in the last 24 hours) |
+| With an irradiance sensor | 292 |
+| With platform `ANOMALY` streams | 3 |
+| With data but no `GEN`, `INV` or `PYR` stream | 231 |
+
+No node above ID 1130 has data, which agrees with the earlier sweep (none above 1118 then).
+2096 inverter streams are reachable across the solar nodes.
+
+**Not resolved.** Three IDs could not be checked in the re-check: 1062 returned HTTP 422, and 1104 and 1131 were rate
+limited (HTTP 429) when retried. The count is 567 confirmed, plus at most those three.
+
+**Caveat on "solar".** The classification relies on the path convention. Sites that name streams something else
+(`Main`, `SMAInverter1`) have data but show no `GEN`, `INV` or `PYR` stream, so 336 is a floor, not a ceiling.
+
+## 1. Public nodes found (first scan, 2026-08-24; undercounted, see the update above)
 
 **102 nodes have data. 52 are still reporting** (data on or after 2026-08-01).
 The full catalogue is in [`data/nodes.json`](data/nodes.json); the
@@ -166,3 +201,11 @@ Blocked without credentials:
 - Nameplate capacity, so no capacity-normalised comparison
 - Any control or write operation
 - SolarFlux live streaming
+
+## Notes on use
+
+- Counts are snapshots of what the public API returned at scan time. Nodes appear, disappear and change visibility,
+  and some requests failed or were rate limited, so treat every number here as approximate.
+- The scans send thousands of requests. The public API rate limits (HTTP 429), so scan slowly, retry with backoff,
+  and follow SolarNetwork's terms of use.
+- The data belongs to SolarNetwork and the node operators. This project is not affiliated with them.
